@@ -1,3 +1,4 @@
+// ACM 호텔
 const input = require("fs")
   .readFileSync("./dev/stdin")
   .toString()
