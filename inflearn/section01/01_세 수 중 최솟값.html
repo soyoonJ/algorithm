@@ -1,0 +1,27 @@
+<!-- 세 수 중 최솟값 -->
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(a, b, c) {
+        // 내가 푼 방법
+        let min;
+        (a<b)?min=a:min=b;
+        (min<c)?min:min=c;
+        return min;
+
+        // 강의 방식
+        // let answer;
+        // if(a<b) answer=a;
+        // else answer=b;
+        // if(c<answer) answer=c;
+        // return answer;
+      }
+
+      console.log(solution(6, 5, 11));
+    </script>
+  </body>
+</html>
