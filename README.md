@@ -12,7 +12,7 @@ URL : https://programmers.co.kr/learn/courses/30/lessons/68644
 백준 2839번 문제   
 URL : https://www.acmicpc.net/problem/2839    
 
-**인프런**
-파일명 : /section01/01_세 수 중 최솟값.html
-폴더명 : 섹션넘버
-파일명 : 섹션별 강의넘버+문제이름
+**인프런**   
+파일명 : /section01/01_세 수 중 최솟값.html    
+폴더명 : 섹션넘버    
+파일명 : 섹션별 강의넘버+문제이름   
