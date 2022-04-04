@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                // 내 풀이
+                // return s.split('').map(e=>e==="A"?e="#":e).join('')
+
+                // 강의 풀이 ----------------------
+                // 방법1
+                // let answer="";
+                // for (let x of s) {
+                //     // console.log(x);
+                //     if(x==='A') answer+='#';
+                //     else answer+=x;
+                // }
+
+                // 방법2
+                let answer = s;
+                answer=answer.replace(/A/g,'#');
+                // console.log(answer)
+                return answer;
+            }
+            
+            let str="BANANA";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>

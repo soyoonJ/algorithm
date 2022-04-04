@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>일곱난쟁이 출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        // 내 풀이
+        // let answer = []
+        // let total = arr.reduce((a,b)=>a+b)
+        // // console.log(total)
+
+        // for (let i=0; i<8; i++) {
+        //     for (let j=i+1; j<9; j++) {
+        //         if (total - (arr[i]+arr[j]) === 100) {
+        //             return arr.filter(e=>e!==arr[i] && e!==arr[j])
+        //         }
+        //     }
+        // }
+
+        // 강의 풀이---------------------------------------
+        // 얕은 복사
+        let answer=arr;
+        let sum = arr.reduce((a,b)=>a+b, 0);
+        for(let i=0; i<8; i++) {
+            for (let j=i+1; j<9; j++) {
+                if((sum - (arr[i]+arr[j]))===100) {
+                    // i부터 지우면 index값이 당겨지기 때문에 값에 오류가 남
+                    // j부터 지워버리기!
+                    arr.splice(j,1);
+                    arr.splice(i,1);
+                }
+            }
+        }
+        return answer;
+      }
+
+      let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
