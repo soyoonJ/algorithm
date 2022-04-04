@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s, t){
+                // 내 풀이
+                // let answer = 0   
+                // for (let i=0; i<s.length; i++) {
+                //     s[i] === t ? answer++ : answer;
+                // }
+                // return answer;
+
+                // 강의 풀이1 -----------------------------
+                // let answer = 0;
+                // for (let x of s) {
+                //     if(x===t) answer++;
+                // }
+                // return answer;
+
+                // 강의 풀이2 - 내장함수 활용
+                let answer = s.split(t).length-1;
+                return answer;
+            }
+            
+            let str="COMPUTERPROGRAMMING";
+            console.log(solution(str, 'R'));
+        </script>
+    </body>
+</html>

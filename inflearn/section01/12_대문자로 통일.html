@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){ 
+                // 내 풀이 
+                // return s.toUpperCase();
+
+                // 강의 풀이
+                let answer = "";
+                for (let x of s) {
+                    // 방법1
+                    if(x===x.toLowerCase()) answer+=x.toUpperCase();
+                    else answer+=x;
+
+                    // 방법2
+                    // let num=x.charCodeAt();
+                    // if (num>=97 && num<=122) answer+=String.fromCharCode(num-32);
+                    // else answer+=x;
+                }
+                return answer;
+            }
+
+            let str="ItisTimeToStudy";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
