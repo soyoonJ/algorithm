@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){     
+                // 내 풀이 
+                // let answer=[arr[0]];
+                // let continuous=0;
+                // for (let i=1; i<arr.length; i++){
+                //     if(arr[i]===0) {
+                //         continuous=0;
+                //         answer.push(arr[i])
+                //     }
+                //     else {
+                //         continuous++;
+                //         answer.push(continuous);
+                //     }
+                // }
+                // return answer.reduce((a,b)=>a+b);
+
+                // 강의 풀이 - answer.push 안하고 바로바로 더해버리기!
+                let answer=0; cnt=0;
+                for(let x of arr){
+                    if(x===1){
+                        cnt++;
+                        answer+=cnt;
+                    }
+                    else cnt=0;
+                }
+                return answer;
+            }
+
+            let arr=[1, 0, 1, 1, 1, 0, 0, 1, 1, 0];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
