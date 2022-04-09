@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                // 내 풀이 - 정규식은 언제나 어려워!
+                let lower = s.toLowerCase().replace(/[^a-z]/g,"");
+                if(lower.split('').join('')===lower.split('').reverse().join('')) return "YES"
+                // if(lower.split('')===lower.split('').reverse()) return "YES"
+                else return "NO"
+
+                // 강의 풀이
+                // let answer = "YES";
+                // s=s.toLowerCase().replace(/[^a-z]/g,"");
+                // // s랑 바로 비교하면 코드가 더 짧아짐!
+                // if(s.split('').reverse().join("")!==s) return "NO";
+                // return answer;
+            }
+            
+            let str="found7, time: study; Yduts; emit, 7Dnuof";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
