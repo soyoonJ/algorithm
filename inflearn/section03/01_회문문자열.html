@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                // 내 풀이
+                // let changeString = s.toLowerCase();
+                // let middle = Math.floor(changeString.length/2);
+                // if (s.length%2===0) {
+                //     if(changeString.substring(0, middle).split('').join('') === changeString.substring(middle, s.length+1).split('').reverse().join('')) return "YES";
+                //     else return "NO";
+                // } else {
+                //     if(changeString.substring(0, middle).split('').join('') === changeString.substring(middle+1, s.length+1).split('').reverse().join('')) return "YES"
+                //     else return "NO";
+                // }
+
+                // 강의 풀이 1번 방식 - 직접 비교
+                // let answer = "YES";
+                // s=s.toLowerCase();
+                // let len=s.length;
+                // for(let i=0; i<Math.floor(len/2); i++) {
+                //     if(s[i]!==s[len-i-1]) return "NO"
+                // }
+                // return answer;
+
+                // 강의 풀이 2번 방식 - 메서드 사용
+                let answer = "YES";
+                s=s.toLowerCase();
+                // 왘! 엄청 간단해!!!
+                if(s.split('').reverse().join('')!==s) return "NO";
+                return answer;
+            }
+            
+            let str="goooG";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
