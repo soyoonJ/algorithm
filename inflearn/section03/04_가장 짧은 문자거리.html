@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s, t){
+              // 내 풀이 - 시간복잡도 면에서 좋지 않을듯
+            //   let tLocation = []; 
+            //   for (let i=0; i<s.length; i++) {
+            //       if(s[i]===t) tLocation.push(i)
+            //   }
+            //   // console.log(tLocation)
+            //   let answer = [];
+            //   for (let i=0; i<s.length; i++) {
+            //       let min = Number.MAX_SAFE_INTEGER;
+            //       for (let j=0; j<tLocation.length; j++) {
+            //           if (Math.abs(tLocation[j] - i) < min) min = Math.abs(tLocation[j] - i)
+            //       }
+            //       answer.push(min)
+            //   }
+            //   return answer;
+
+              // 강의 풀이 - 왼쪽에서 한번, 오른쪽에서 한번 돌기
+              let answer=[];
+              let p = 1000;
+              for (let x of s) {
+                  if(x===t){
+                      p=0;
+                      answer.push(p)
+                  } else {
+                      p++;
+                      answer.push(p);
+                  }
+              }
+
+              p = 1000;
+              for (let i=s.length-1; i>=0; i--) {
+                  if(s[i]===t) p=0;
+                  else {
+                      p++;
+                      answer[i]=Math.min(answer[i], p);
+                  }
+              }
+              return answer;
+            }
+            
+            let str="teachermode";
+            console.log(solution(str, 'e'));
+        </script>
+    </body>
+</html>
