@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(n, arr){
+                // 내 풀이
+                // let answer = 0;
+                // let max = 0
+                // for (x of arr) {
+                //     let sum = 0;
+                //     let calculate = x;
+                //     while(calculate>0) {
+                //         sum += calculate%10
+                //         calculate=Math.floor(calculate/10)
+                //     }
+                //     if (sum>max) {
+                //         answer=x;
+                //         max = sum;
+                //     } else if (sum===max) {
+                //         answer=Math.max(x, answer);
+                //     }
+                // }
+                // return answer;
+
+                // 강의풀이1
+                // let answer, max=Number.MIN_SAFE_INTEGER;
+                // for (let x of arr) {
+                //     let sum=0, tmp=x;
+                //     while(tmp) {
+                //         sum+=(tmp%10);
+                //         // parseInt 해줘도 됨!
+                //         tmp=Math.floor(tmp/10);
+                //     }
+                //     if(sum>max) {
+                //         max=sum;
+                //         answer=x;
+                //     }
+                //     else if (sum===max){
+                //         if(x>answer) answer=x;
+                //     }
+                // }
+
+                // return answer;
+
+                // 강의풀이2 - split, reduce 메서드 활용
+                let answer, max=Number.MIN_SAFE_INTEGER;
+                for (let x of arr) {
+                    let sum=x.toString().split('').reduce((a,b)=>a+Number(b), 0);
+
+                    if(sum>max) {
+                        max=sum;
+                        answer=x;
+                    }
+                    else if (sum===max) {
+                        if(x>answer) answer=x;
+                    }
+                }
+                return answer;
+            }
+            
+            let arr=[128, 460, 603, 40, 521, 137, 123];
+            console.log(solution(7, arr));
+        </script>
+    </body>
+</html>
