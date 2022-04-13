@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(m, product){
+                // 듀륵... 실패...
+                // let sum = 0;
+                // let answer = 0;
+                // product.sort((a,b)=>a[0]-b[0])
+                // // console.log(product)
+                // while(sum<=m) {
+                //     for (let x of product) {
+                //         sum += x[0]+x[1]
+                //         answer++;
+                //         // console.log(sum)
+                //     }
+                // }
+                // // console.log(product[answer])
+                // // if (product[answer][0]/2+product[answer][1]+sum<=28) answer++;
+                // return answer;
+
+                // 강의 풀이
+                let answer=0;
+                let n=product.length;
+                product.sort((a,b)=>(a[0]+a[1])-(b[0]+b[1]));
+                // 하나씩 할인 됐다고 가정하고 미리 뺀 다음에 나머지 for문
+                for (let i=0; i<n; i++) {
+                    let money = m-(product[i][0]/2+product[i][1]);
+                    let cnt = 1;
+                    for (let j=0; j<n; j++) {
+                        if(j!==i && (product[j][0]+product[j][1])>money) break; 
+                        if(j!==i && (product[j][0]+product[j][1])<=money) {
+                            money-=(product[j][0]+product[j][1]);
+                            cnt++;
+                        }
+                    }
+                    answer=Math.max(answer, cnt)
+                }
+                return answer;
+            }
+            
+            let arr=[[6, 6], [2, 2], [4, 3], [4, 5], [10, 3]];
+            console.log(solution(28, arr));
+        </script>
+    </body>
+</html>
