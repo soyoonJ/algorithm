@@ -5,7 +5,7 @@ const rl = readline.createInterface({
 });
 let input = [];
 rl.on("line", function (line) {
-  input.push(+line.toString());
+  input.push(line);
 }).on("close", function () {
   input.shift();
 
@@ -15,10 +15,10 @@ rl.on("line", function (line) {
   for (let change of input) {
     let count = [];
     for (let coin of coins) {
-      count.push(Math.floor(change / coin));
+      count.push(~~(change / coin));
       change %= coin;
     }
-    result.push(count[0], count[1], count[2], count[3]);
+    result.push(count.join(" "));
   }
   console.log(result.join("\n"));
 
