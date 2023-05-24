@@ -18,7 +18,7 @@ rl.on("line", function (line) {
       count.push(Math.floor(change / coin));
       change %= coin;
     }
-    result.push(console.log(count[0], count[1], count[2], count[3]));
+    result.push(count[0], count[1], count[2], count[3]);
   }
   console.log(result.join("\n"));
 
