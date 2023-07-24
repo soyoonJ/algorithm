@@ -2,8 +2,8 @@ const fs = require("fs");
 const input = fs.readFileSync("./dev/stdin").toString().split("\n");
 
 const condition = input[0].split(" ").map(Number);
-const coinNum = condition[0];
-let value = condition[1];
+const N = condition[0];
+let K = condition[1];
 
 const coins = input
   .splice(1)
@@ -12,12 +12,12 @@ const coins = input
 
 let answer = 0;
 
-for (let i = 0; i < coinNum; i++) {
-  if (value <= 0) break;
-  if (value / coins[i] < 1) continue;
+for (let i = 0; i < N; i++) {
+  if (K <= 0) break;
+  if (K / coins[i] < 1) continue;
 
-  answer += Math.floor(value / coins[i]);
-  value -= Math.floor(value / coins[i]) * coins[i];
+  answer += Math.floor(K / coins[i]);
+  K %= coins[i];
 }
 
 console.log(answer);
