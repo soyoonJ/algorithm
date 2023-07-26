@@ -14,4 +14,4 @@ for (let i = 1; i < roads.length; i++) {
   totalCosts += minCost * roads[i];
 }
 
-console.log(totalCosts);
+console.log(String(totalCosts));
